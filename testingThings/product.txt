@@ -1,0 +1,14 @@
+db.post.insert([
+   {
+      productName: 'Mig version1',
+      productPrice: '1000000',
+   },
+   {
+     productName: 'Mig version2',
+     productPrice: '2000000',
+   },
+   {
+     productName: 'Mig version3',
+     productPrice: '3000000',
+   }
+])
