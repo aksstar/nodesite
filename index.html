@@ -9,13 +9,32 @@
         <h1>Into to Node and MongoDB</h1>
         <form method="post" action="/addname">
             <label>Enter Your Name</label><br>
-            <input type="text" name="firstName" placeholder="Enter first name..." required>
+            <input type="text" name="firstName" placeholder="Enter first name..." value="John" required>
             <input type="text" name="lastName" placeholder="Enter last name..." required>
             <label>Enter Product Name</label><br>
             <input type="text" name="Product" placeholder="Enter Product name..." required>
             <label>Enter Product Price</label><br>
-            <input type="text" name="Price" placeholder="Enter Price name..." required>
+            <input type="text" name="Price" placeholder=" Price ..." value="1000" required>
+            <label>Revised Product Price</label><br>
+            <input type="text" name="disPrice" placeholder=" Price name..." required>
             <input type="submit" value="Place Order">
         </form>
+        <script type="text/javascript">
+            document.getElementById("Price").onchange = function() {myFunction()}
+
+            function myFunction() {
+                var x = document.getElementById("Price");
+                var y = document.getElementById("disPrice");
+                y.value = x.value - 500;
+                console.log("y value",y.value)
+            }
+            document.getElementById("firstName").onchange = function() {myFunction()};
+
+            function myFunction() {
+                var x = document.getElementById("firstName");
+                x.value = x.value.toUpperCase();
+            }
+        </script>
+
     </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example uses the HTML DOM to assign an "onchange" event to an input element.</p>
+
+Enter your name: <input type="number" id="fname">
+
+<label>Enter Your Name</label><br>
+<input type="text" name="firstName" placeholder="Enter first name..." value="John" required>
+<input type="text" name="lastName" placeholder="Enter last name..." required>
+<label>Enter Product Name</label><br>
+<input type="text" name="Product" placeholder="Enter Product name..." required>
+<label>Enter Product Price</label><br>
+<input type="text" id="Price" name="Price" placeholder=" Price ..." value="1000" required>
+<label>Revised Product Price</label><br>
+<input type="text" id="RPrice" name="RPrice" placeholder=" Price name..." required>
+<input type="submit" value="Place Order">
+
+<p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+
+<script>
+document.getElementById("Price").onchange = function() {myFunction()};
+
+function myFunction() {
+    var x = document.getElementById("Price");
+    var y = document.getElementById("RPrice");
+    y.value = x.value - 50;
+}
+</script>
+
+</body>
+</html>

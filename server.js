@@ -12,7 +12,9 @@ mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/");
 var nameSchema = new mongoose.Schema({
     firstName: String,
-    lastName: String
+    lastName: String,
+    Product : String,
+    Price : Number,
 });
 var User = mongoose.model("User", nameSchema);
 
@@ -32,8 +34,12 @@ app.post("/addname", (req, res) => {
 });
 
 
-
-
+app.get('/show', (req, res) => {
+  User.find(function (err, adminLogins) {
+  if (err) return console.error("err");
+  console.log(typeof admin);
+})
+});
 
 app.listen(port, () => {
     console.log("Server listening on port " + port);
